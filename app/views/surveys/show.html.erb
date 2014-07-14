@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<div class="WorkArea">
+  <p>
+    <strong>Name:</strong>
+    <%= @survey.name %>
+  </p>
+
+  <p>
+    <strong>Who survey code:</strong>
+    <%= @survey.who_survey_code %>
+  </p>
+
+  <%= link_to 'Edit', edit_survey_path(@survey) %> |
+  <%= link_to 'Back', surveys_path %>
+</div>

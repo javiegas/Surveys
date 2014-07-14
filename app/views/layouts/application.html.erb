@@ -6,9 +6,81 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="fluid">
+  <!-- begin: page -->
+  <div id="page">
+    <!-- begin: wrapper -->
+    <div id="wrapper">
+    	
+      <!-- begin: header -->
+      <div id="header">
+				
+        <!-- begin: branding -->
+        <div id="branding">
+          <a href="http://who.int" title="WHO | World Health Organization"><img src="<%= image_url "who_wrapper_en.gif" %>" alt="WHO | World Health Organization"/></a>
+        </div><!-- end: branding -->
+				
+      </div><!-- end: header -->
+			
+      <!-- begin: main -->
+      <div id="main">
+      		
+        <!-- begin: title -->
+        <div id="title">
+          <h1>HIV Drug Resistance Database</h1>
+        </div><!-- end: title -->
+      
+          <div id="user_header">
+	      <div class="session_header">
+            <%unless session[:user_id]%>
+              <ul class="nav">
+                <li><%= link_to :Signup , :signup, class: "nav_links"%></li>|
+                <li><%= link_to :Login , :login, class: "nav_links"%></li>	
+              </ul>
+            <%else%>
+              <ul class="nav">
+                <li><%= link_to :Home , :home, class: "nav_links" %> |</li>
+                <li><%= link_to :Profile , :profile, class: "nav_links" %> |</li>
+                <li><%= link_to :Setting , :setting, class: "nav_links" %> |</li>
+                <li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
+              </ul>
+            <%end%>
+	      </div>
+	      </div>
+        <% if flash[:color]== "valid" %>
+          <div class="valid_notice">
+            <p><%= flash[:notice]%></p>
+          </div>
+	    <% elsif flash[:color]== "invalid"%>
+          <div class="invalid_notice">
+            <p><%=flash[:notice]%></p>
+          </div>
+        <%else%>
+          <div class="notice">
+            <p><%=flash[:notice]%></p>
+          </div>
+        <%end%>
 
-<%= yield %>
+        <!-- begin: content -->
+        <div id="content">
+          <%= yield %>
+        </div><!-- end: content -->
+        <!-- all clear -->
+        <div class="clear"><!-- all clear --></div>
+				
+      </div><!-- end: main -->
 
+      <!-- begin: footer -->
+      <div id="footer">
+        <!-- begin: foot -->
+        <div id="foot">
+          <p><img src=<%= image_url "footer_emblem-en.gif" %> alt="WHO | World Health Organization"/><br /><a>&copy; <acronym title="World Health Organization">
+			        WHO</acronym> 2014</a></p>
+        </div>
+        <!-- end: foot -->
+      </div> <!--end: footer -->
+      
+    </div><!-- end: wrapper -->
+  </div><!-- end: page -->
 </body>
 </html>

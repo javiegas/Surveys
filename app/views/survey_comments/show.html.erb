@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @survey_comment.comment %>
+</p>
+
+<p>
+  <strong>Survey:</strong>
+  <%= @survey_comment.survey_id %>
+</p>
+
+<%= link_to 'Edit', edit_survey_comment_path(@survey_comment) %> |
+<%= link_to 'Back', survey_comments_path %>

@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  
+ 
+  resources :surveys
+  resources :survey_comments
+
+  # get ':controller(/:action(/:id))(.:format)'
+
+  root :to => 'sessions#login'
+  get "signup", :to => "users#new"
+  get "login", :to => "sessions#login"
+  get "logout", :to => "sessions#logout"
+  get "home", :to => "sessions#home"
+  get "profile", :to => "sessions#profile"
+  get "setting", :to => "sessions#setting"
+
+  
+ 
+
+  get 'users/new'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

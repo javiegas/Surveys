@@ -1,0 +1,27 @@
+<h1>Listing survey_comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comment</th>
+      <th>Survey</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @survey_comments.each do |survey_comment| %>
+      <tr>
+        <td><%= survey_comment.comment %></td>
+        <td><%= survey_comment.survey_id %></td>
+        <td><%= link_to 'Show', survey_comment %></td>
+        <td><%= link_to 'Edit', edit_survey_comment_path(survey_comment) %></td>
+        <td><%= link_to 'Destroy', survey_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Survey comment', new_survey_comment_path %>

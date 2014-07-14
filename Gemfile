@@ -51,4 +51,8 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
+gem 'bcrypt', :require => 'bcrypt'
 
+group :test, :development do
+  gem "rspec-rails", "~> 2.13.1"
+end
