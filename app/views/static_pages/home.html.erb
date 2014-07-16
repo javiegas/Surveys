@@ -1,7 +1,9 @@
+<% provide(:title, 'HOME') %>
 <!DOCTYPE html>
 <html ng-app="AngularSurveys">
 <head>
-  <title>WHO HIV Resistance Database | <%= yield(:title) %> </title>
+  <title>WHO HIV Resistance Database | <%= yield(:title) %></title>
+
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= csrf_meta_tags %>
 </head>
@@ -60,7 +62,8 @@
 
         <!-- begin: content -->
         <div id="content">
-          <%= yield %>
+          <h1>Welcome</h1>
+          <p>Welcome to WHO HIV Drug Resistance Database proof concept.</p>
         </div><!-- end: content -->
         <!-- all clear -->
         <div class="clear"><!-- all clear --></div>
@@ -80,3 +83,4 @@
   <%= javascript_include_tag 'application'%>
 </body>
 </html>
+

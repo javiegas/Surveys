@@ -20,6 +20,7 @@
     <%= f.text_field :who_survey_code %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to "Return to Surveys", surveys_path, :class => "btn btn-default" %>
   </div>
 <% end %>

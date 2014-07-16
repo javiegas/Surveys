@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
-  
+
+  root to: "static_pages#home"  
  
+  get 'static_pages/help'
+
+  get 'static_pages/about'
+
   resources :surveys
   resources :survey_comments
 
   # get ':controller(/:action(/:id))(.:format)'
 
-  root :to => 'sessions#login'
-  get "signup", :to => "users#new"
+  # root :to => 'sessions#login'
   get "login", :to => "sessions#login"
   get "logout", :to => "sessions#logout"
   get "home", :to => "sessions#home"

@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap.min
  */
 body{
 	background-color: #ffffff;
@@ -500,7 +501,7 @@ table.tableData thead td, table.borderOn thead td {
 #header {
 	position:relative;
 	padding:0px;
-	background-color:#1E7FB8;
+	background-color:#008dc9;
 	padding:10px 15px;
 }
 
@@ -529,10 +530,12 @@ table.tableData thead td, table.borderOn thead td {
 
 /* footer */
 #footer {
-	position:relative;
-	border-top:1px solid #CCCCCC;
-	padding:15px;
-	background-color:#F5F5F5;
+	height: 50px;
+	background-color:#FFFFFF;
+	background-image: url('WHO_LOGO.png');
+	background-repeat: no-repeat;
+	background-position: right center;
+	
 }
 
 /* foot */
@@ -544,7 +547,7 @@ table.tableData thead td, table.borderOn thead td {
 
 #foot a, #foot span {
 	display:block;
-	float:left;
+	float:right;
 	color:#666666;
 	padding:5px 2px;
 }
