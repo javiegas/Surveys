@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<div class="WorkArea">
+<div id="WorkArea">
+  <h1>Survey details</h1>
+  	
   <p>
     <strong>Name:</strong>
     <%= @survey.name %>
@@ -11,6 +13,6 @@
     <%= @survey.who_survey_code %>
   </p>
 
-  <%= link_to 'Edit', edit_survey_path(@survey) %> |
-  <%= link_to 'Back', surveys_path %>
+  <%= link_to 'Edit survey', edit_survey_path(@survey), :class => 'btn btn-primary' %> 
+  <%= link_to 'Return do surveys', surveys_path, :class => "btn btn-default" %>
 </div>

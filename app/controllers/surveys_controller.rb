@@ -1,24 +1,34 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
 
+  add_breadcrumb "home", :root_path
+  
+
   # GET /surveys
   # GET /surveys.json
   def index
     @surveys = Survey.all
+    add_breadcrumb "surveys", surveys_path
   end
 
   # GET /surveys/1
   # GET /surveys/1.json
   def show
+    add_breadcrumb "surveys", surveys_path
+    add_breadcrumb "show", survey_path
   end
 
   # GET /surveys/new
   def new
     @survey = Survey.new
+    add_breadcrumb "surveys", surveys_path
+    add_breadcrumb "new", new_survey_path
   end
 
   # GET /surveys/1/edit
   def edit
+    add_breadcrumb "surveys", surveys_path
+    add_breadcrumb "edit", edit_survey_path
   end
 
   # POST /surveys

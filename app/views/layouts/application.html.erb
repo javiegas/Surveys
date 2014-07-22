@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="AngularSurveys">
 <head>
-  <title>WHO HIV Resistance Database | <%= yield(:title) %> </title>
+  <title><%= full_title(yield(:title)) %> </title>
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= csrf_meta_tags %>
 </head>
@@ -12,14 +12,14 @@
     <div id="wrapper">
     	
       <!-- begin: header -->
-      <div id="header">
+      <header id="header">
 				
         <!-- begin: branding -->
         <div id="branding">
           <a href="http://who.int" title="WHO | World Health Organization"><%= image_tag "who_wrapper_en.gif", alt:"WHO | World Health Organization" %></a>
         </div><!-- end: branding -->
 				
-      </div><!-- end: header -->
+      </header><!-- end: header -->
 			
       <!-- begin: main -->
       <div id="main">
@@ -30,19 +30,20 @@
         </div><!-- end: title -->
       
           <div id="user_header">
-	      <div class="session_header">
-            <%unless session[:user_id]%>
-              <ul class="list-inline">
-                <li><%= link_to :Login , :login, class: "nav_links"%></li>	
-              </ul>
-            <%else%>
-              <ul class="nav">
-                <li><%= link_to :Profile , :profile, class: "nav_links" %> |</li>
-                <li><%= link_to :Setting , :setting, class: "nav_links" %> |</li>
-                <li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
-              </ul>
-            <%end%>
-	      </div>
+          	<%= render_breadcrumbs %>
+	        <div class="session_header">
+              <%unless session[:user_id]%>
+                <ul class="list-inline">
+                  <li><%= link_to :Login , :login, class: "nav_links"%></li>	
+                </ul>
+              <%else%>
+                <ul class="nav">
+                  <li><%= link_to :Profile , :profile, class: "nav_links" %> |</li>
+                   <li><%= link_to :Setting , :setting, class: "nav_links" %> |</li>
+                  <li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
+                </ul>
+              <%end%>
+	        </div>
 	      </div>
         <% if flash[:color]== "valid" %>
           <div class="valid_notice">
@@ -68,12 +69,12 @@
       </div><!-- end: main -->
 
       <!-- begin: footer -->
-      <div id="footer">
+      <footer id="footer">
         <!-- begin: foot -->
         <div id="foot">
         </div>
         <!-- end: foot -->
-      </div> <!--end: footer -->
+      </footer> <!--end: footer -->
       
     </div><!-- end: wrapper -->
   </div><!-- end: page -->

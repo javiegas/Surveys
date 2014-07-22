@@ -11,16 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, :for => 'surveyName' %><br>
+    <%= f.text_field :name, :class => 'form-control', :id => 'surveyName' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :who_survey_code %><br>
-    <%= f.text_field :who_survey_code %>
+    <%= f.text_field :who_survey_code, :class => 'form-control' %>
   </div>
   <div class="actions">
     <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to 'View Survey', @survey, :class => 'btn btn-primary' if @form_A === 'E'%>
     <%= link_to "Return to Surveys", surveys_path, :class => "btn btn-default" %>
   </div>
 <% end %>

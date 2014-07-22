@@ -524,7 +524,7 @@ table.tableData thead td, table.borderOn thead td {
 
 /* content */
 #content {
-	padding:15px;
+	padding:0px;
 }
 
 
@@ -631,7 +631,7 @@ table.tableData thead td, table.borderOn thead td {
 	padding:0 20px;
 	border-radius: 18px;
 	box-shadow: 5px 5px 5px #888888;*/
-  height:20px;	
+  height:40px;	
   padding: 7px 7px;
   margin: 0 0 0 0px;
   background-color: #DBEEF9;
@@ -640,6 +640,10 @@ table.tableData thead td, table.borderOn thead td {
   -moz-border-radius: 3px;
   border-radius: 3px;
 
+}
+
+.session_header {
+	float: right;
 }
 
 .App_Header h1{
@@ -696,8 +700,8 @@ table.tableData thead td, table.borderOn thead td {
 	display:none;
 }
 
-.WorkArea{
-	margin-left:200px;
+#WorkArea{
+	margin:0px 160px 0px 200px;
 	padding: 10px 10px;
 	height: 475px;
   border: 1px solid #ddd;
@@ -707,3 +711,49 @@ table.tableData thead td, table.borderOn thead td {
 	
 }
 
+.actions {
+	float:bottom;
+}
+
+
+.teste {
+	position: relative;
+	width: 400px;
+	height: 400px;
+	text-align: left;
+	line-height: 50px;
+	background-color: #fff;
+	border: 2px solid #666;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	-webkit-box-shadow: 2px 2px 4px #888;
+	-moz-box-shadow: 2px 2px 4px #888;
+	box-shadow: 2px 2px 4px #888;
+	padding: 10px;
+}
+
+
+.teste:before {
+	content: ' ';
+	position:absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-color: transparent #666;
+	border-width:13px 15px 13px 0;
+	left: -15px;
+	top: 25px;
+}
+
+.teste:after {
+	content: ' ';
+	position:absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-color: transparent #fff;
+	border-width:13px 15px 13px 0;
+	left: -12px;
+	top: 25px;
+}
