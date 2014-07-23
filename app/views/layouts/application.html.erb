@@ -1,83 +1,32 @@
 <!DOCTYPE html>
-<html ng-app="AngularSurveys">
+<html ng-app="AngularSurveys" lang="en">
 <head>
   <title><%= full_title(yield(:title)) %> </title>
+  
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= csrf_meta_tags %>
 </head>
 <body class="fluid">
   <!-- begin: page -->
-  <div id="page">
-    <!-- begin: wrapper -->
-    <div id="wrapper">
-    	
-      <!-- begin: header -->
-      <header id="header">
-				
-        <!-- begin: branding -->
-        <div id="branding">
-          <a href="http://who.int" title="WHO | World Health Organization"><%= image_tag "who_wrapper_en.gif", alt:"WHO | World Health Organization" %></a>
-        </div><!-- end: branding -->
-				
-      </header><!-- end: header -->
-			
-      <!-- begin: main -->
-      <div id="main">
-      		
-        <!-- begin: title -->
-        <div id="title">
-          <h1>HIV Drug Resistance Database</h1>
-        </div><!-- end: title -->
-      
-          <div id="user_header">
-          	<%= render_breadcrumbs %>
-	        <div class="session_header">
-              <%unless session[:user_id]%>
-                <ul class="list-inline">
-                  <li><%= link_to :Login , :login, class: "nav_links"%></li>	
-                </ul>
-              <%else%>
-                <ul class="nav">
-                  <li><%= link_to :Profile , :profile, class: "nav_links" %> |</li>
-                   <li><%= link_to :Setting , :setting, class: "nav_links" %> |</li>
-                  <li><%= link_to :Logout , :logout, class: "nav_links" %></li>	
-                </ul>
-              <%end%>
-	        </div>
-	      </div>
-        <% if flash[:color]== "valid" %>
-          <div class="valid_notice">
-            <p><%= flash[:notice]%></p>
-          </div>
-	    <% elsif flash[:color]== "invalid"%>
-          <div class="invalid_notice">
-            <p><%=flash[:notice]%></p>
-          </div>
-        <%else%>
-          <div class="notice">
-            <p><%=flash[:notice]%></p>
-          </div>
-        <%end%>
-
-        <!-- begin: content -->
-        <div id="content">
-          <%= yield %>
-        </div><!-- end: content -->
-        <!-- all clear -->
-        <div class="clear"><!-- all clear --></div>
-				
-      </div><!-- end: main -->
-
-      <!-- begin: footer -->
-      <footer id="footer">
-        <!-- begin: foot -->
-        <div id="foot">
-        </div>
-        <!-- end: foot -->
-      </footer> <!--end: footer -->
-      
-    </div><!-- end: wrapper -->
-  </div><!-- end: page -->
+  <div id="page" class="fluidPage">
+    <!-- begin: page header -->
+    <%= render 'layouts/header' %>    
+    <!-- end: page header -->
+    <!-- begin: bodyPage -->
+    <div class="bodyPage">
+      <%= yield %>
+    </div> 
+    <!-- end: bodyPage -->
+    <!-- begin: page footer-->
+    <%= render 'layouts/footer' %>
+    <!-- end: page footer -->
+  </div> <!--! end of #page-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <%= javascript_include_tag 'application'%>
 </body>
 </html>

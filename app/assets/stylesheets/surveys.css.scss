@@ -1,3 +1,591 @@
 // Place all the styles related to the Surveys controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*--------------------------------------------------------------------------------------
+ *  WHO COLORS
+ ======================================================================================*/
+
+$WHOBackBlue: #196aaa;
+$WHOBrandBlue: #1e7fb8;
+$WHOBlue: #008dc9;
+$WHOOrange: #D86422;
+$WHOBlackGray: #333333;
+$WHODarkGray: #666666;
+$WHOGray: #cccccc;
+$WHOLightGray: #f5f5f5;
+$WHOLightGrayBorder: #e6e6e6;
+$WHOTeal: #dbeef9;
+$WHOYellow: #ffffcc;
+
+
+
+/* -------------------------------------------------------------------------------------
+ HEADINGS
+ ======================================================================================*/
+
+/* headers */
+h1 {  
+  font-size:20px;
+  line-height:24px;
+  font-weight:bold;
+  color:$WHOOrange;
+  padding:0;
+  margin:0 0 18px 0;
+}
+
+#branding h1 {
+  color: white;
+  margin: 10px 0px;
+}
+
+h2, h1.title {
+  font-size:20px;
+  line-height:24px;
+  font-weight:bold;
+  color:$WHOBlackGray;
+  padding:18px 0 0 0;
+  margin:0 0 18px 0;
+}
+h3 {
+  font-size:13px;
+  line-height:18px;
+  font-weight:bold;
+  color:$WHOBlackGray;
+  padding:6px 0 0 0;
+  margin:0 0 9px 0;
+}
+h4 {
+  font-size:12px;
+  line-height:18px;
+  font-weight:bold;
+  color:$WHOBlackGray;
+  margin:0 0 6px 0;
+}
+h5 {
+  font-size:12px;
+  line-height:18px;
+  font-weight:bold;
+  color:$WHODarkGray;
+}
+h6 {
+  font-size:13px;
+  line-height:18px;
+  font-weight:normal;
+  color:$WHOBlackGray;
+}
+
+/* -------------------------------------------------------------------------------------
+ TEXT 
+ ======================================================================================*/
+
+/* paragraph */
+p {
+  font-size:13px;
+  line-height:18px;
+  margin:0 0 18px 0;
+}
+
+
+/* text */
+strong {
+  font-weight:bold;
+}
+em {
+  font-style:italic;
+}
+sup, sub {
+  position: relative;
+  font-size:9px;
+  height:1;
+  line-height:1;
+  vertical-align: baseline;
+  _vertical-align: bottom;
+  background-color:$WHOGray; 
+}
+sup {
+  bottom:0.8ex;
+}
+sub {
+  top:.5ex;
+}
+cite{
+  font-style:italic;
+}
+cite:before {
+  content:"«";
+}
+cite:after {
+  content:"»";
+}
+
+
+/* -------------------------------------------------------------------------------------
+ links
+ ------------------------------------------------------------------------------------- */
+
+/* link */
+a {
+  color:#196AAA ;
+  text-decoration:none;
+}
+a:visited {
+    color: #0F4262;
+}
+a:hover {
+  color:#D86422;
+  text-decoration:none;
+}
+a[name], a[name]:hover, a.anchor, a.anchor:hover {
+  color: $WHOBlackGray;
+}
+
+/* -------------------------------------------------------------------------------------
+ CONTAINERS & BOXES
+ ======================================================================================*/
+
+/* #inlay (box element) */
+.inlay, .inlay_color {
+  padding:9px 9px 4px 9px;
+  border:1px solid $WHOGray;
+  margin:0 0 18px 0;
+  zoom:1;
+  overflow: hidden;
+}
+.inlay_color {
+  background-color: $WHOLightGray;
+  border: 1px solid $WHOLightGrayBorder;
+}
+
+/* box */
+.box {
+  clear:both;
+  background-image:url('img/lines.gif');
+  background-position:left top;
+  background-repeat:repeat-x;
+  padding:9px 0 18px 0;
+}
+.plainbox {
+  clear:both;
+  padding:0 0 5px 0;
+}
+.box_title {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: bold;
+  color: $WHOBlackGray;
+  padding:0 0 0 0;
+  margin:0 0 12px 0;
+}
+.box_subtitle {
+  font-size:13px;
+  line-height:18px;
+  font-weight:bold;
+  color: $WHOBlackGray;
+  margin:0 0 9px 0;
+  padding:5px 0 0 0;
+  border-top:1px solid $WHOGray;
+}
+
+/* -------------------------------------------------------------------------------------
+ FORMS
+ ======================================================================================*/
+
+/* form */
+.form {
+  margin:0 0 18px 0;
+}
+.form br {
+  clear:both;
+  width:0;
+  height:0;
+  font-size:0;
+  line-height:0;
+  text-indent:-10000px;
+}
+
+/* fieldset */
+.form fieldset {
+  padding:0 0 6px 0;
+  margin:0 0 29px 0;
+  border-bottom:1px solid $WHOGray;
+}
+
+.form fieldset legend {
+  font-family: 'Helvetica', Arial, Verdana, sans-serif;
+  font-size:20px;
+  line-height:21px;
+  font-weight:bold;
+  color: black;
+  padding:3px 0 3px 0;
+  margin:0;
+}
+
+/* field */
+.form .field {
+  margin:0 0 9px 0;
+}
+
+
+
+/* label */
+label, .label {
+  font-family: 'Helvetica', Arial, Verdana, sans-serif;
+  font-size:13px;
+  line-height:18px;
+  color: $WHOBlackGray;
+  padding:3px 0 3px 0;
+}
+.form .label {
+  display:block;
+  float:left;
+  width:110px;
+}
+
+/* error & info */
+span.error, span.info {
+  clear:both;
+  display:block;
+  float:left;
+  font-family: 'Helvetica', Arial, Verdana, sans-serif;
+  font-size:13px;
+  line-height:18px;
+  color: $WHOBlackGray;
+  padding:3px 5px 6px 120px;
+}
+
+/* error */
+.form span.error {
+  color: red;
+}
+.form .error label {
+  color: red;
+}
+.form .error input {
+  border-color: red;
+}
+
+
+/* info  */
+.form .info {
+  color: $WHODarkGray;
+}
+
+/* inputs */
+.input, input.text, select.select, textarea.textarea, input.radio, input.checkbox, input.submit, .submit input {
+  font-family: 'Helvetica', Arial, Verdana, sans-serif;
+  font-size:13px;
+  line-height:18px;
+  color: $WHOBlackGray;
+  margin:0; 
+}
+.form .input, .form input.text, .form select.select, .form textarea.textarea, .form input.radio, .form input.checkbox, .form .dropdown {
+  display:block;
+  float:left;
+  margin:0 0 0 10px;
+}
+
+input.text:focus, select.select:focus, textarea:focus {
+  border-color: $WHOOrange;
+}
+
+
+/* input */
+.input {
+  padding:4px 0px 2px 0px;
+}
+
+/* text input */
+input.text {
+  width:140px;
+  height:18px;
+  background-color: white;
+  border:1px solid $WHOGray;
+  padding:4px 4px 0px 4px;
+  border-radius:2px;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+}
+input.tsmall {
+  width:60px;
+}
+input.tsmall-2 {
+  width:140px;
+}
+input.tlarge {
+  width:350px;
+}
+
+/* textarea */
+textarea.textarea {
+  width:138px;
+  height:72px;
+  background-color: white;
+  border:1px solid $WHOGray;
+  padding:2px 5px 2px 5px;
+  border-radius:2px;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+}
+textarea.talarge {
+  width:348px;
+  height:200px;
+}
+
+
+/* select */
+select.select {
+  width:150px;
+  height:24px;
+  background-color: white;
+  border:1px solid $WHOGray;
+  padding:3px 1px;
+  border-radius:2px;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+}
+select.ssmall {
+  width:70px;
+}
+select.slarge {
+  width:360px;
+}
+
+/* radio */
+input.radio {
+  border:none;
+  background-color:transparent;
+}
+.form input.radio {
+  padding:0;
+  margin:6px 5px 0 10px;
+}
+label.label_radio {
+  display:block;
+  float:left;
+  margin-right:15px;
+}
+
+
+/* checkbox */
+input.checkbox {
+  border:none;
+  background-color:transparent;
+}
+.form input.checkbox {
+  padding:1px 0 0 0;
+  margin:5px 5px 0 10px;
+}
+label.label_checkbox {
+  display:block;
+  float:left;
+  margin-right:15px;
+}
+
+/* submit */
+input.submit {
+  display:block;
+  font-size:13px;
+  line-height:18px;
+  font-weight:normal;
+  color:#333333;
+  padding:8px 10px;
+  margin:0;
+  border:1px solid $WHOGray;
+  background-color: $WHOLightGray;
+  border-radius:3px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+}
+input.submit:hover {
+  color: $WHOOrange;
+  cursor:pointer;
+}
+input.primary {
+  color: $WHOBackBlue ;
+  border-color: $WHOBackBlue ;
+}
+
+/* -------------------------------------------------------------------------------------
+ TABLE
+ ======================================================================================*/
+
+/* table */
+table.tableData, table.borderOn {
+  width:100%;
+  border-collapse:collapse;
+  margin:0 0 18px 0;
+}
+table.tableData thead td, table.tableData tbody th, table.tableData tbody td, table.borderOn thead td, table.borderOn tbody th, table.borderOn tbody td {
+  font-size:13px;
+  line-height:18px;
+  padding:3px 5px 6px 5px;
+  background-color: $WHOLightGray;
+  border-bottom:3px solid white;
+}
+table.tableData tfoot th, table.tableData tfoot td, table.borderOn tfoot th, table.borderOn tfoot td {
+  font-size:12px;
+  line-height:18px;
+  padding:9px 0 3px;
+  color:#999999;
+}
+.borderOn td {
+border-right:1px solid $WHOGray;
+border-left:1px solid $WHOGray;
+}
+
+table.tableData thead td, table.borderOn thead td {
+  font-weight: bold;
+  background-color:#E1E1E1;
+}
+
+
+/* ==|== primary styles =====================================================
+ * Description: Adapted WHO Wrapper main styles
+ * Author: José Viegas 
+ */
+
+
+/* page */
+.fluidPage {
+  padding: 0;
+  clear: both; 
+  margin: 0 auto; 
+  width: 90%;
+}
+
+/* page header */
+.pageHeader {
+  position:relative;
+  padding:0px;
+  background-color: $WHOBlue;
+}
+
+#whoHeader {
+  padding:10px 15px;
+  a {
+    display: block;
+    height: 55px;
+    width: 163px;
+    padding: 0;
+    background-image: url('who_wrapper_en.gif');
+    background-repeat: no-repeat;
+    text-decoration: none;
+  }
+  a:hover {
+    background-color: $WHOBlue;
+  }
+}
+
+.appTitle {
+  padding:7px 0px 7px 15px;
+  background-color: $WHOLightGray;
+  border-bottom:1px solid $WHOGray;
+}
+
+#whoAppTitle {margin-bottom: 0;}
+
+
+.appHeader {
+  height:45px;  
+  padding: 7px 7px;
+  margin: 0 0 0 0px;
+  background-color: $WHOTeal;
+  border: 1px solid $WHOGray;
+}
+
+.rightMenu  {
+  float: right;
+  margin-left:10px;
+}
+
+.pageFooter {
+  height: 70px;
+}
+
+#whoFooter {
+  background-image: url('WHO_LOGO.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+
+  .copyright {
+    position:absolute;
+    bottom:0;
+    margin-bottom:15px;
+  }
+
+}
+
+
+.bodyPage {
+  width:100%;
+  min-height:500px;
+  overflow:hidden;
+}
+
+.mainArea {
+  padding-left: 5px;
+}
+
+.appMenu {
+  float:left;
+  width:200px;
+  height:382px;
+  margin:20px auto;
+}
+
+.appMain {
+  float:left;
+  width: 65%;
+  min-height: 480px;
+  margin-left:5px;
+  border: $WHOBackBlue solid 1px;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+.mainTitle {
+  padding: 10px 10px 10px 20px;
+  
+  h1 {
+    padding-bottom: 5px;
+    border-bottom: 2px solid $WHOOrange;
+  }
+}
+
+.mainFooter {
+  text-align:right;
+  padding: 10px;
+}
+
+.discussionTitle{
+  padding:10px;
+  background-color:$WHOLightGray;
+  border:#428bca solid 1px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.msg-edit {
+  min-height      : 0;
+  padding         : 10px;
+  margin          : 30px;  
+  background-color: $WHOLightGray;
+  border          : #428bca solid 1px;
+    border-radius        : 10px;
+    -moz-border-radius   : 10px;
+    -webkit-border-radius: 10px;
+}
+
+.msg-edit-footer {
+  margin-top  : 10px;
+  word-spacing: 30px;
+}
+
+.appContext {
+  float  : right;
+  width  : 180px;
+  padding: 10px 5px;
+}

@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   root to: "static_pages#home"  
- 
-  get 'static_pages/help'
 
-  get 'static_pages/about'
+  # static pages routes 
+  match '/help',    to: 'static_pages#help',    via: 'get'
+  match '/about',   to: 'static_pages#about',   via: 'get'
+  match '/contact', to: 'static_pages#contact', via: 'get'
 
   resources :surveys
   resources :survey_comments
@@ -12,11 +13,11 @@ Rails.application.routes.draw do
   # get ':controller(/:action(/:id))(.:format)'
 
   # root :to => 'sessions#login'
-  get "login", :to => "sessions#login"
-  get "logout", :to => "sessions#logout"
-  get "home", :to => "sessions#home"
-  get "profile", :to => "sessions#profile"
-  get "setting", :to => "sessions#setting"
+  get "login",   to: "sessions#login"
+  get "logout",  to: "sessions#logout"
+  get "home",    to: "sessions#home"
+  get "profile", to: "sessions#profile"
+  get "setting", to: "sessions#setting"
 
   
  

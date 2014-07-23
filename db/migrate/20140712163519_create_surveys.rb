@@ -4,7 +4,10 @@ class CreateSurveys < ActiveRecord::Migration
       t.string :name
       t.string :who_survey_code
 
-      t.timestamps
+      t.datetime :create_dt
+      t.string :create_by
+      t.datetime :modify_dt
+      t.string :modify_by
     end
   end
 end

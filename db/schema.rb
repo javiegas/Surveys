@@ -11,30 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713204208) do
+ActiveRecord::Schema.define(version: 20140723115757) do
 
   create_table "countries", id: false, force: true do |t|
     t.string   "id",                    limit: 3
-    t.string   "name"
+    t.string   "name",                  limit: 100
     t.string   "alias"
     t.string   "who_region_rf"
     t.string   "who_subregion_rf"
-    t.string   "who_code"
+    t.string   "who_code",              limit: 3
     t.integer  "country_phone_code_rf"
-    t.string   "official_language_rf"
+    t.string   "official_language_rf",  limit: 4
     t.string   "currency_code_rf"
     t.date     "begin_dt"
     t.date     "end_dt"
-    t.date     "create_dt"
+    t.datetime "create_dt"
     t.string   "create_by"
-    t.date     "modify_dt"
+    t.datetime "modify_dt"
     t.string   "modify_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "survey_comments", force: true do |t|
-    t.string   "comment"
+    t.string   "comment",    limit: 2000
     t.integer  "survey_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -43,17 +41,21 @@ ActiveRecord::Schema.define(version: 20140713204208) do
   create_table "surveys", force: true do |t|
     t.string   "name"
     t.string   "who_survey_code"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "create_dt"
+    t.string   "create_by"
+    t.datetime "modify_dt"
+    t.string   "modify_by"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "username"
+  create_table "users", id: false, force: true do |t|
+    t.string   "username",        limit: 30
     t.string   "email"
-    t.string   "encrypted_password"
-    t.string   "salt"
+    t.string   "name",            limit: 100
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
