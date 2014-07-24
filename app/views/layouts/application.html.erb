@@ -19,6 +19,7 @@
     <!-- begin: bodyPage -->
     <div class="bodyPage">
       <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
     </div> 
     <!-- end: bodyPage -->
     <!-- begin: page footer-->

@@ -60,6 +60,7 @@ group :test do
 
   gem 'rb-notifu'
   gem 'wdm'  
+  gem 'factory_girl_rails'
 end
 
 group :test, :development do
@@ -74,3 +75,5 @@ end
 gem 'angularjs-rails'
 
 gem 'breadcrumbs_on_rails'
+
+gem 'nokogiri'

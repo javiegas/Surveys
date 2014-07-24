@@ -589,3 +589,52 @@ table.tableData thead td, table.borderOn thead td {
   width  : 180px;
   padding: 10px 5px;
 }
+
+
+/* RAILS DEBUG */
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* forms */
+
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  width: 100%;
+  border:0;
+  background-color:white;
+  color: #f00;
+  ul {
+    margin: 0 0 18 0;
+  }
+  ul li {
+    list-style: none;
+  }
+}
+
+
+.row {
+  margin-top:20px;
+ padding-left:20px; 
+}
+
+.help-inline {
+  color:red;
+}
