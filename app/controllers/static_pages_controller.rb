@@ -1,6 +1,11 @@
 class StaticPagesController < ApplicationController
+  add_breadcrumb "home", :root_path
+  
   def home
-    render layout: false
+    if !signed_in?
+      redirect_to login_path
+    end
+    #render layout: false
   end
 
   def help

@@ -76,4 +76,6 @@ gem 'angularjs-rails'
 
 gem 'breadcrumbs_on_rails'
 
+gem 'gretel'
+
 gem 'nokogiri'

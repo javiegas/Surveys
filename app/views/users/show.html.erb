@@ -5,10 +5,14 @@
 <div class="row">
   <aside class="span4">
     <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
+      <header class="user-header">
+        <div class="user-avatar">
+          <%= gravatar_for @user %>
+        </div>
+        <h1>
+          Welcome <%= @user.name %>
+        </h1>
+      </header>
     </section>
   </aside>
 </div>

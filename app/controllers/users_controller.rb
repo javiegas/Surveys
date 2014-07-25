@@ -1,22 +1,30 @@
 class UsersController < ApplicationController
   
+  
   def show
     @user = User.find(params[:id])
+    
+    add_breadcrumb "Home", "/"
+    add_breadcrumb "Profile", "#"
   end
   
   def new
     # sign up form
+    add_breadcrumb "", "#"
     @user = User.new 
   end
   
   def create
   
-     @user = User.new(user_params)
+    add_breadcrumb "", "#"
+
+   @user = User.new(user_params)
     
     #flash[:notice] = "User :" + @user.username + " - " +@user.email
     
     if @user.save
-      flash[:success] = "Welcome to the Sample App!"
+      sign_in @user
+      flash[:success] = "Welcome to WHO HIV Resistance Database!"
       redirect_to @user
     else
       render "new"

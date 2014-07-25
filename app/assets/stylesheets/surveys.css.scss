@@ -504,6 +504,7 @@ table.tableData thead td, table.borderOn thead td {
 }
 
 #whoFooter {
+  clear:both;
   background-image: url('WHO_LOGO.png');
   background-repeat: no-repeat;
   background-position: right center;
@@ -516,6 +517,32 @@ table.tableData thead td, table.borderOn thead td {
 
 }
 
+.user-header {
+  display: table;
+  height:50px;
+  width:100%;
+  
+  h1 {
+    float:left;
+    margin-left:10px;
+    margin-top:10px;
+  }
+  
+  .user-gravatar {
+    float:left;
+    vertical-align:center;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+      -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+      -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    overflow: clipping;
+  }
+}
 
 .bodyPage {
   width:100%;
